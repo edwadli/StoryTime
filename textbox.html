@@ -2,30 +2,34 @@
 <html>
 
 <head></head>
-
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io();
+</script>
 <body>
-<h1>Here is the textbox!!</h1>
+<h1>Enter some text!</h1>
     
     <textarea name="data" class="text_reader" cols="80" rows="10" wrap="off"></textarea>
     <input type="button" class="button_press"></input>
     
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
+        
     <script>
-    $('.button_press').on('click',
-        function(e) {
-            var str = $('.text_reader').val();
+        $('.button_press').on('click',
+            function(e) {
+                $('.img').html("");
+                var str = $('.text_reader').val();
 
-            search_term = str;
-    })
+                search_term = str;
 
-            var gif_url = ;
+                var gif_url = "";
 
-            console.log(str);
-            $( "body" ).append('<img style="-webkit-user-select: none; cursor: zoom-in;" src='+gif_url+' width="266" height="150">');
-    });
+                socket.emit('chat message', str);
+                socket.on('chat message', function(msg){
+                    $('.img').append('<img src="' + msg + '"></img>');
+                });
+            });
     </script>
-
+    <div class="img"></div>
 </body>
-    
 </html>
