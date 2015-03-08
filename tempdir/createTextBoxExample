@@ -1,0 +1,7 @@
+function create(param) {
+    var s= "";
+    for(var i = 0; i < param; i++) {
+        s+= '<input type="text" name="Fname">'; //Create one textbox as HTML
+    }
+    document.getElementById("screens").innerHTML=s;
+}
