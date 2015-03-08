@@ -16,5 +16,5 @@ var after_fileread = function(err,my_html){
                         console.log('Server running at http://127.0.0.1:1337/');
                     }
 
-fs.readFile('./sample.html', after_fileread);
+fs.readFile('./textbox.html', after_fileread);
 
