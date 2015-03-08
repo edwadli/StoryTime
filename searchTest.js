@@ -8,7 +8,7 @@ var server_acts = function(req, res){
 	res.end();
 }
 
-fs.readFile('./tempdir/sample.html', function(err, my_html){
+fs.readFile('./textbox.html', function(err, my_html){
 	if (err){
 		throw err;
 	}

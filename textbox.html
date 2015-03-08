@@ -10,15 +10,22 @@
     <input type="button" class="button_press"></input>
     
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
     <script>
     $('.button_press').on('click',
         function(e) {
             var str = $('.text_reader').val();
+
+            search_term = str;
+    })
+
+            var gif_url = ;
+
             console.log(str);
+            $( "body" ).append('<img style="-webkit-user-select: none; cursor: zoom-in;" src='+gif_url+' width="266" height="150">');
     });
     </script>
 
 </body>
     
 </html>
-
